@@ -1,0 +1,15 @@
+create database CabManagment;
+use CabManagment;
+create table CabUser(id int primary key,uname varchar(30),uphoneno varchar(30));
+insert into CabUser values(1,"Ravi","7879324345");
+create table Cab(id int primary key,RegistrationNo varchar(30),Model varchar(30),Colour varchar(30));
+insert into cab values(1,"PD123","Swift Desire","White");
+insert into cab values(2,"PD456","Innova","Blue");
+insert into cab values(3,"PD789","Wagonr","Red");
+Create table CabDriver(id int primary key,DName varchar(30),DEmail varchar(30),DPhoneNo varchar(30));
+insert into CabDriver values(1,"Dhanraj","dhano@gmail.com","4595315678");
+insert into CabDriver values(2,"Tarun","tar@gmail.com","4595315678");
+insert into CabDriver values(3,"Loria","Lor@gmail.com","4595315678");
+insert into CabDriver values(4,"Mahendra","Mahi@gmail.com","4595315678");
+create table BookedCab(id int primary key,RegistrationNo varchar(30),Model varchar(30),Colour varchar(30),DName varchar(30),DEmail varchar(30),DPhoneNo varchar(30));
+

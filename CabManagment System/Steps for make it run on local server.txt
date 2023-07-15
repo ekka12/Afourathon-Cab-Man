@@ -1,0 +1,13 @@
+Project Requirement
+.>download Dotnet version 7
+.>download Mysql database
+
+steps .:--
+Since it is microsevice so user need to first host Backend first that is "CabBackEnd"
+.> once application is open in Visual studio then go to mvc {"CabMangment"}
+.> then go to "AppSetting.json" there you have to change Default connection setting ,Mostly password is different so make change in password only
+.>open mysql , there is Prepared statement we have provided in text ,copy and paste just after login since provided create database is also given so dont make any database
+.>then deploy Backend first 
+.> then go 2nd Application "CabFrontend" and deploy it also then you can use this micoservice Cab Management System Application
+
+Thanking You !!!! 

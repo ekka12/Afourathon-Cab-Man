@@ -1,0 +1,64 @@
+@using CabManagment.Models;
+@{
+   //string userName = ViewData["userName"].ToString();
+   List<Cab>cablist = ViewData["Cab"] as List<Cab>;
+   List<CabDriver>dlist= ViewData["DriverList"] as List<CabDriver>;
+}
+
+<html>
+    <meta>
+    <head>
+
+    </head>
+      <div align="center">
+        <h1>Welcome <i>@ViewData["userName"]</i> in Cab Order Service</h1>
+      </div><br><br>
+      <div>
+        <h4><i><u>@TempData["message"]</u></i></h4>
+      </div><br><br>
+      <div align="center">
+        <h4>Please take your time to make order</h4>
+      </div><br><br>
+    <body>
+        <form action="/home/CabOrderIndex" method="post">
+             <div align="left">
+                <h4><b>Select Cab</b></h4><br>
+                @{
+                    foreach(Cab cb in cablist){
+                        <div align="left">                          
+                            <h6>
+                                <i>  
+  Name    : @cb.Model &nbsp;&nbsp;
+  Reg No. : @cb.RegistrationNo &nbsp;&nbsp;
+  Colour  : @cb.Colour &nbsp;&nbsp;
+  Select  : <Input type="radio" name="Cabobjid" id="Cabobjid" value="@cb.Id"/>                                    
+                                </i>
+                            </h6>
+                            
+                        </div><br>
+                    }
+                }
+             </div><br><br>
+             <div align="left">
+                <h4><b>Select Driver</b></h4><br>
+                @{
+                    foreach(CabDriver cd in dlist){
+                        <div align="left">                          
+                            <h6>
+                                <i> 
+  Name    : @cd.DName &nbsp;&nbsp;
+  Email   : @cd.DEmail &nbsp;&nbsp;
+  Phone   : @cd.DPhoneNo &nbsp;&nbsp;
+  Select  : <Input type="radio" name="driverobjid" id="driverobjid" value="@cd.Id"/>                                      
+                                </i>
+                            </h6>
+                            
+                        </div><br>
+                    }
+                }
+             </div><br>
+             <button type="submit" name="btn" id="btn">Submit Request</button>&nbsp;&nbsp;
+             <button type="reset" name="btn1" id="btn1">Reset Request</button>
+        </form>
+    </body>
+</html>

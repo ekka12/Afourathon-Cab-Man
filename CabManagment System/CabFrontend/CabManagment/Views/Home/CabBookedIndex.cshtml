@@ -1,0 +1,65 @@
+@using CabManagment.Models;
+@{
+    BookedCab broker = ViewData["Booker"] as BookedCab;
+}
+
+<html>
+    <meta>
+    <head>
+
+    </head>
+         <div align="center">
+            <h1>Welcome <i>@ViewData["userName"]</i> in Cab Order Service</h1>
+         </div><br><br>
+         <div align="center">
+            <h4>Please Confirm your Booking or you can update it</h4>
+         </div><br><br>
+    <body>
+        <form action="/home/CabBookedIndex" method="post">
+           <table class="table">
+             <tr>
+                <th>Model</th>
+                <th>Registration No</th>
+                <th>Colour</th>
+                <th>Driver Name</th>
+                <th>Driver Email</th>
+                <th>Driver Phone</th>
+             </tr>
+             @{
+                <tr>
+                    <td>@broker.Model</td>
+                    <td>@broker.RegistrationNo</td>
+                    <td>@broker.Colour</td>
+                    <td>@broker.DName</td>
+                    <td>@broker.DEmail</td>
+                    <td>@broker.DPhoneNo</td>
+                </tr>
+             }             
+           </table><br>
+           <div>
+            <a href="/home/UpdateCabBooking?Bookid=@broker.Id">Update your Booking</a>
+           </div><br>
+           Please click to confirm your booking <input type="checkbox" name="ConfirmId" id="ConfirmId" value="1"/><br><br>
+           <button type="submit" name="btn" id="btn">Final Submit</button>
+           <style>
+            #btn{
+                display: none;
+            }
+           </style>
+           <script>
+                var checkbox = document.getElementById('ConfirmId');
+                var myButton = document.getElementById('btn');
+                checkbox.addEventListener('change',toggleButtonVisibility);
+                function  toggleButtonVisibility(){
+                    if(checkbox.checked){
+                        myButton.style.display='block';
+                    }
+                    else{
+                        myButton.style.display='none';
+                    }
+                }              
+           </script>
+        </form>
+         
+    </body>
+</html>

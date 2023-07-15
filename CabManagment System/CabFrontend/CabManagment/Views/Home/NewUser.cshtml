@@ -1,0 +1,21 @@
+@using CabManagment.Models;
+@{
+   int cabuserid = (int)ViewData["cuid"];
+}
+<html>
+    <meta>
+    <head>
+
+    </head>
+    <body>
+        <form action="/home/NewUser" method="post">
+        <input type="hidden" id="cid" name="cid" value="@cabuserid">
+          Name : <input type="text" id="uname" name="uname" required="true" placeholder="Enter your name"/><br><br>
+          Phone no : <input type="text" id="uphone" name="uphone" required="true" placeholder="Enter your phone no"/><br><br>
+          <button type="submit" id="btn" name="btn">Submit</button>&nbsp;&nbsp;
+          <button type="reset" id="btn1" name="btn1">Cancel</button>
+
+        </form>
+
+    </body>
+</html>

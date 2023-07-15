@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "DmhxZ6JCCfa+nt7PsGGo23mS/tuWMZH5c4xG7s5CoN1OmGZBYeXYiIYxUNOtn1Q6U7GvAtmeyxGbRi3yy0X5fA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\dikesh\\Desktop\\CabManagment System\\CabFrontend\\CabManagment\\CabManagment.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dikesh\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
